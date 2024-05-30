@@ -17,13 +17,7 @@ document.addEventListener("DOMContentLoaded", function() {
 
     function prevStep() {
         if (currentStep > 0) {
-            const currentHeading = document.querySelector('.form-step:nth-child(' + (currentStep + 1) + ') h4').innerText;
-            if (currentHeading === "Datos de Contacto") {
-                // Redirigir a la sección de "¿Qué tipo de proyecto te interesa?"
-                currentStep = 1; // Suponiendo que la sección de "¿Qué tipo de proyecto te interesa?" es la segunda (índice 1)
-            } else {
-                currentStep--;
-            }
+            currentStep--;
             showStep(currentStep);
         }
     }
@@ -41,23 +35,5 @@ document.addEventListener("DOMContentLoaded", function() {
     const startButton = document.getElementById("btn-inicio");
     startButton.addEventListener("click", function() {
         nextStep();
-    });
-
-    // Add event listener to the Landing Page button
-    const landingPageButton = document.getElementById("btn-landing-page");
-    landingPageButton.addEventListener("click", function() {
-        window.location.href = "landing.html";
-    });
-
-    // Add event listener to the Sitio Web Informativo button
-    const sitioWebButton = document.getElementById("btn-sitio-web");
-    sitioWebButton.addEventListener("click", function() {
-        window.location.href = "sitioweb.html";
-    });
-
-    // Add event listener to the Tienda Online button
-    const tiendaOnlineButton = document.querySelector(".button-group button:nth-child(3)");
-    tiendaOnlineButton.addEventListener("click", function() {
-        window.location.href = "tiendaonline.html";
     });
 });
