@@ -1,0 +1,203 @@
+:root {
+    /* Colores */
+    --blanco: #FFFFFF;
+    --morado:  #1A052D;
+
+    /* Tipografias */
+    --Montserrat: "Montserrat", sans-serif;
+    --Krona: "Krona One", sans-serif;
+}
+
+* {
+    box-sizing: border-box;
+    text-decoration: none;
+}
+
+html {
+    font-size: 62.5%;
+}
+
+body {
+    font-family: var(--Montserrat);
+    background-color: #1A052D;
+    font-size: 1.6rem;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.container {
+    width: auto;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.inicio,
+.tipo-proyecto,
+.form-step,
+.Diseño-web {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+h4 {
+    text-align: center;
+    font-family: var(--Montserrat);
+    font-weight: 300;
+    font-size: 2rem;
+    color: var(--blanco);
+}
+
+h2 {
+    font-family: var(--Krona);
+    font-size: 3rem;
+    text-align: center;
+    margin-bottom: 4rem;
+    background: rgb(108,243,206);
+    background: linear-gradient(90deg, rgba(108,243,206,1) 32%, rgba(255,67,97,1) 70%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    line-height: 1.7; /* Ajusta la altura de la línea a 1.5 veces el tamaño de la fuente */
+}
+
+p {
+    font-family: var(--Montserrat);
+    font-weight: 400;
+    font-size: 1.8rem;
+    color: var(--blanco);
+    text-align: center;
+    margin-bottom: 8rem;
+    line-height: 1.5; /* Ajusta la altura de la línea a 1.5 veces el tamaño de la fuente */
+}
+
+/* ESTILOS SECCION 1*/
+
+.inicio h4 {
+    text-align: center;
+    font-family: var(--Montserrat);
+    font-weight: 500;
+    font-size: 5rem;
+    color: var(--blanco);
+    margin: 0;
+}
+
+.inicio h1 {
+    font-family: var(--Krona);
+    font-size: 8rem;
+    text-align: center;
+    background: rgb(108,243,206);
+    background: linear-gradient(90deg, rgba(108,243,206,1) 32%, rgba(255,67,97,1) 70%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    margin-top: 0;
+    margin-bottom: 3rem;
+}
+
+#btn-inicio {
+    font-family: var(--Montserrat);
+    font-weight: 700;
+    font-size: 2rem;
+    background: rgb(108,243,206);
+    background: linear-gradient(90deg, rgba(108,243,206,1) 32%, rgba(255,67,97,1) 70%);
+    color: var(--morado);
+    border: none;
+    padding: 15px 30px;
+    margin: 10px 5px;
+    border-radius: 25px;
+    cursor: pointer;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+#btn-inicio:hover {
+    background: var(--blanco);
+    color: var(--morado);
+}
+
+/* FIN ESTILOS SECCION 1 */
+
+.form-row {
+    display: flex;
+    justify-content: space-between;
+    gap: 150px; /* Añadido gap para el espacio entre los inputs */
+    margin-bottom: 30px;
+}
+
+.form-group {
+    width: 400px;
+}
+
+input {
+    width: 100%;
+    padding: 10px;
+    border: none;
+    border-bottom: 2px solid #ff004c;
+    background-color: transparent;
+    color: white;
+    outline: none;
+    margin-bottom: 20px;
+}
+
+input::placeholder {
+    color: rgba(255, 255, 255, 0.6);
+}
+
+.button-group {
+    display: flex;
+    justify-content: center;
+    gap: 4rem; /* Espacio de 4rem entre los botones */
+}
+
+.button-group button {
+    font-family: var(--Montserrat);
+    font-weight: 600;
+    font-size: 2rem;
+    background: rgb(108,243,206);
+    background: linear-gradient(90deg, rgba(108,243,206,1) 32%, rgba(255,67,97,1) 70%);
+    color: var(--morado);
+    border: none;
+    padding: 15px 30px;
+    margin: 10px 5px;
+    border-radius: 25px;
+    cursor: pointer;
+}
+
+.button-group button:hover {
+    background: var(--blanco);
+    color: var(--morado);
+}
+
+.arrow-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px; /* Espacio entre los iconos */
+}
+
+.arrow {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: none;
+    cursor: pointer;
+    background: transparent; /* Fondo transparente */
+    padding: 0; /* Eliminar padding para ajustar el tamaño del botón al icono */
+    margin-top: 3rem;
+}
+
+.arrow svg {
+    fill: #fff;
+    height: 48px; /* Aumentar tamaño */
+    width: 48px; /* Aumentar tamaño */
+}
+
+.arrow:hover {
+    background-color: transparent;
+}
