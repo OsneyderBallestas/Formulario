@@ -1,4 +1,5 @@
 document.addEventListener("DOMContentLoaded", function() {
+    // Inicializar variables y funciones comunes
     const steps = document.querySelectorAll(".form-step");
     let currentStep = 0;
 
@@ -22,18 +23,42 @@ document.addEventListener("DOMContentLoaded", function() {
         }
     }
 
+    // Asignar eventos a los botones de navegación
     const btnNext = document.querySelectorAll(".arrow-container .arrow#btn-next");
     const btnPrev = document.querySelectorAll(".arrow-container .arrow#btn-prev");
 
     btnNext.forEach(button => button.addEventListener("click", nextStep));
     btnPrev.forEach(button => button.addEventListener("click", prevStep));
 
-    // Initial setup
+    // Inicializar vista
     showStep(currentStep);
 
-    // Add event listener to the start button
+    // Asignar evento al botón de inicio si existe
     const startButton = document.getElementById("btn-inicio");
-    startButton.addEventListener("click", function() {
-        nextStep();
-    });
+    if (startButton) {
+        startButton.addEventListener("click", nextStep);
+    }
+
+    // Asignar eventos a los botones de selección de proyecto
+    const btnLandingPage = document.getElementById("btn-landing-page");
+    const btnSitioWeb = document.getElementById("btn-sitio-web");
+    const btnTiendaOnline = document.getElementById("btn-tienda-online");
+
+    if (btnLandingPage) {
+        btnLandingPage.addEventListener("click", () => {
+            window.location.href = 'landing.html';
+        });
+    }
+
+    if (btnSitioWeb) {
+        btnSitioWeb.addEventListener("click", () => {
+            window.location.href = 'sitioweb.html';
+        });
+    }
+
+    if (btnTiendaOnline) {
+        btnTiendaOnline.addEventListener("click", () => {
+            window.location.href = 'tiendaonline.html';
+        });
+    }
 });
