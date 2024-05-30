@@ -30,13 +30,12 @@ document.addEventListener("DOMContentLoaded", function() {
     btnNext.forEach(button => button.addEventListener("click", nextStep));
     btnPrev.forEach(button => button.addEventListener("click", prevStep));
 
-    // Inicializar vista
-    showStep(currentStep);
-
-    // Asignar evento al botón de inicio si existe
-    const startButton = document.getElementById("btn-inicio");
-    if (startButton) {
-        startButton.addEventListener("click", nextStep);
+    // Asignar evento click al botón con id "btn-prev-contacto" para redirigir a la sección "tipo-de-proyecto"
+    const btnPrevContacto = document.getElementById("btn-prev-contacto");
+    if (btnPrevContacto) {
+        btnPrevContacto.addEventListener("click", function() {
+            window.location.href = 'index.html#tipo-de-proyecto';
+        });
     }
 
     // Asignar eventos a los botones de selección de proyecto
@@ -61,4 +60,26 @@ document.addEventListener("DOMContentLoaded", function() {
             window.location.href = 'tiendaonline.html';
         });
     }
+
+    // Inicializar la vista del primer paso
+    showStep(currentStep);
+
+    // Asignar evento al botón de inicio si existe
+    const startButton = document.getElementById("btn-inicio");
+    if (startButton) {
+        startButton.addEventListener("click", nextStep);
+    }
 });
+
+// Función para manejar el desplazamiento hasta el ancla después de que la página ha cargado
+window.onload = function() {
+    if (window.location.hash) {
+        const id = window.location.hash.slice(1); // Obtiene el ID de la sección desde el hash de la URL
+        const element = document.getElementById(id);
+        if (element) {
+            setTimeout(() => {
+                element.scrollIntoView(); // Desplaza el navegador hasta el elemento
+            }, 100); // Pequeño retardo para asegurar la carga de la página
+        }
+    }
+};
