@@ -68,4 +68,55 @@ document.addEventListener("DOMContentLoaded", function() {
     });
     
 
+
+        // Funcionalidad para el botón btn-volver-sw para volver a la sección tipo-proyecto
+    const btnVolverSW = document.getElementById('btn-volver-sw');
+    btnVolverSW.addEventListener('click', function() {
+        // Ocultar todas las secciones para limpieza visual
+        const allSections = document.querySelectorAll('.container > div');
+        allSections.forEach(section => {
+            section.style.display = 'none';
+        });
+        
+        // Mostrar la sección tipo-proyecto
+        document.querySelector('.tipo-proyecto').style.display = 'block';
+    });
+
+    
+        // Manejar el clic en el botón btn-sitio-web para mostrar las preguntas de Sitio Web Informativo
+        const btnSitioWeb = document.getElementById('btn-sitio-web');
+        const sitioWebSections = document.querySelectorAll('#preguntas-sitioweb > div');
+        let currentSitioWebIndex = 0; // índice para controlar qué pregunta se muestra
+        
+        btnSitioWeb.addEventListener('click', function() {
+            const allSections = document.querySelectorAll('.container > div');
+            allSections.forEach(section => {
+                section.style.display = 'none'; // Ocultar todas las secciones
+            });
+            document.getElementById('preguntas-sitioweb').style.display = 'block'; // Mostrar el contenedor de preguntas de sitio web
+            showSitioWebSection(currentSitioWebIndex); // Mostrar la primera sección de preguntas
+        });
+    
+        // Función para mostrar una sección de preguntas de sitio web
+        function showSitioWebSection(index) {
+            sitioWebSections.forEach((section, idx) => {
+                section.style.display = idx === index ? 'block' : 'none'; // Mostrar solo la sección activa
+            });
+        }
+    
+        // Agregar listeners a los botones de navegación dentro de preguntas-sitioweb
+        document.querySelectorAll('#preguntas-sitioweb .arrow').forEach(button => {
+            button.addEventListener('click', function() {
+                if (this.id.includes('siguientesw') && currentSitioWebIndex < sitioWebSections.length - 1) {
+                    currentSitioWebIndex++; // Incrementar el índice para mostrar la siguiente sección
+                } else if (this.id.includes('atrasw') && currentSitioWebIndex > 0) {
+                    currentSitioWebIndex--; // Decrementar el índice para volver a la sección anterior
+                }
+                showSitioWebSection(currentSitioWebIndex); // Actualizar la vista
+            });
+        });
+    
+
+
+
 });
