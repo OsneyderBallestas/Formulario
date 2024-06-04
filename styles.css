@@ -38,13 +38,6 @@ body {
     justify-content: center;
 }
 
-.inicio,
-.tipo-proyecto {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-}
 
 h4 {
     text-align: center;
@@ -76,7 +69,14 @@ p {
     line-height: 1.5; /* Ajusta la altura de la línea a 1.5 veces el tamaño de la fuente */
 }
 
-/* ESTILOS SECCION 1*/
+/* ESTILOS SECCION PRINCIPAL*/
+
+.inicio{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
 
 .inicio h4 {
     text-align: center;
@@ -119,33 +119,9 @@ p {
     color: var(--morado);
 }
 
-/* FIN ESTILOS SECCION 1 */
+/* FIN ESTILOS SECCION PRINCIPAL */
 
-.form-row {
-    display: flex;
-    justify-content: space-between;
-    gap: 150px; /* Añadido gap para el espacio entre los inputs */
-    margin-bottom: 30px;
-}
-
-.form-group {
-    width: 400px;
-}
-
-input {
-    width: 100%;
-    padding: 10px;
-    border: none;
-    border-bottom: 2px solid #ff004c;
-    background-color: transparent;
-    color: white;
-    outline: none;
-    margin-bottom: 20px;
-}
-
-input::placeholder {
-    color: rgba(255, 255, 255, 0.6);
-}
+/* ESTILOS DE BOTONES DE SELECCION DEL FORMULARIO */
 
 .button-group {
     display: flex;
@@ -172,6 +148,12 @@ input::placeholder {
     color: var(--morado);
 }
 
+
+/* FIN ESTILOS BOTONES DE SELECCION FORMULARIO */
+
+
+/* ESTILO FLECHAS DE NAVEGACION DEL FORMULARIO */
+
 .arrow-container {
     display: flex;
     justify-content: center;
@@ -191,7 +173,6 @@ input::placeholder {
 }
 
 
-
 #flecha {
     height: 48px; /* Aumentar tamaño */
     width: 48px; /* Aumentar tamaño */
@@ -201,3 +182,118 @@ input::placeholder {
     background-color: transparent;
 }
 
+/* FIN ESTILOS FLECHAS DE SELECCION FORMULARIO */
+
+/* ESTILOS SECCION DE PREGUNTAS DE HOSTING LANDING PAGE */
+
+
+.hosting-lp {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+
+.hosting-lp h2{
+ width: 75%;
+ margin: auto;
+ margin-bottom: 3rem;
+}
+
+.hosting-lp p{
+    width: 50%;
+    margin: auto;
+    margin-bottom: 3rem;
+}
+
+
+.button-group.primarios {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-bottom: 2rem;
+}
+
+.button-group.secundarios {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+}
+
+   
+/* FIN ESTILOS SECCION DE PREGUNTAS DE HOSTING LANDING PAGE */
+
+
+/* ESTILOS TEXTO PRESUPUESTO SECCION LANDING */
+
+.presupuesto-lp {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+
+.presupuesto-lp h2{
+ width: 75%;
+ margin: auto;
+ margin-bottom: 3rem;
+}
+
+.text-presupuesto {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.text-presupuesto input {
+    width: 74%;
+    padding: 10px;
+    border: none;
+    border-bottom: 2px solid #ff004c;
+    background-color: transparent;
+    color: white;
+    outline: none;
+    margin-top: 5rem;
+    margin-bottom: 4rem;
+}
+
+input::placeholder {
+    color: rgba(255, 255, 255, 0.6);
+}
+
+/* FIN ESTILOS TEXTO PRESUPUESTO SECCION LANDING */
+
+
+/* INICIO FORMULARIO LANDING */
+
+
+.form-fila {
+    display: flex;
+    justify-content: space-between;
+    gap: 150px;
+    margin-bottom: 30px; 
+}
+
+.form-group {
+    width: 400px;
+}
+
+input {
+    width: 100%;
+    padding: 10px;
+    border: none;
+    border-bottom: 2px solid #ff004c;
+    background-color: transparent;
+    color: white;
+    outline: none;
+    margin-bottom: 20px;
+}
+
+input::placeholder {
+    color: rgba(255, 255, 255, 0.6);
+}
+/* FIN FORMULARIO LANDING */

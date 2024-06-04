@@ -68,10 +68,13 @@
             <h4>Hosting y Dominio</h4>
             <h2>¿Ya tienes hosting y dominio?</h2>
             <p>El hosting es el espacio donde se aloja tu sitio web, y el dominio es la dirección web (ejemplo.com) que usará la gente para encontrarte.</p>
-            <div class="button-group">
+            <div class="button-group primarios">
                 <button>Sí, ya tengo ambos</button>
                 <button>Sí, solo tengo dominio</button>
                 <button>Sí, solo tengo hosting</button>
+            </div>
+
+            <div class="button-group secundarios">
                 <button>No, necesito ambos</button>
                 <button>No estoy seguro, necesito asesoría</button>
             </div>
@@ -137,11 +140,9 @@
                 <button>Más de $3,000,000 COP</button>
             </div>
 
-            <form>
-                    <div class="form-group">
-                        <input type="text" id="presupuesto" name="presupuesto" placeholder="Otro (por favor, indica tu presupuesto)">
-                    </div>
-            </form>
+            <div class="text-presupuesto">
+                <input type="text" id="presupuesto" name="presupuesto" placeholder="Otro (por favor, indica tu presupuesto)">
+            </div>
 
             <div class="arrow-container">
                 <button class="arrow" id="btn-atras">
@@ -155,11 +156,11 @@
         </div>
 
 
-        <div class="form-step">
+        <div class="form-landing">
             <h4>Datos de Contacto</h4>
             <h2>¡Estamos casi listos! Para enviarte una <br> cotización personalizada, déjanos tus<br> datos de contacto:</h2>
             <form>
-                <div class="form-row">
+                <div class="form-fila">
                     <div class="form-group">
                         <input type="text" id="nombre" name="nombre" placeholder="Nombre">
                     </div>
@@ -167,7 +168,7 @@
                         <input type="email" id="correo" name="correo" placeholder="Correo electrónico">
                     </div>
                 </div>
-                <div class="form-row">
+                <div class="form-fila">
                     <div class="form-group">
                         <input type="tel" id="celular" name="celular" placeholder="Número de celular">
                     </div>
