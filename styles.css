@@ -39,9 +39,7 @@ body {
 }
 
 .inicio,
-.tipo-proyecto,
-.form-step,
-.Diseño-web {
+.tipo-proyecto {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -192,8 +190,9 @@ input::placeholder {
     margin-top: 3rem;
 }
 
-.arrow svg {
-    fill: #fff;
+
+
+#flecha {
     height: 48px; /* Aumentar tamaño */
     width: 48px; /* Aumentar tamaño */
 }
@@ -201,3 +200,4 @@ input::placeholder {
 .arrow:hover {
     background-color: transparent;
 }
+

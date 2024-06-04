@@ -1,85 +1,71 @@
 document.addEventListener("DOMContentLoaded", function() {
-    // Inicializar variables y funciones comunes
-    const steps = document.querySelectorAll(".form-step");
-    let currentStep = 0;
+    // Ocultar todas las secciones excepto la de inicio
+    const secciones = document.querySelectorAll('.container > div:not(.inicio)');
+    secciones.forEach(sec => {
+        sec.style.display = 'none';
+    });
 
-    function showStep(step) {
-        steps.forEach((step, index) => {
-            step.style.display = index === currentStep ? "block" : "none";
+    // Funcionalidad para el botón btn-inicio para ir a la sección tipo-proyecto
+    const btnInicio = document.getElementById('btn-inicio');
+    btnInicio.addEventListener('click', function() {
+        document.querySelector('.inicio').style.display = 'none';
+        document.querySelector('.tipo-proyecto').style.display = 'block';
+    });
+
+    // Funcionalidad para el botón btn-proyecto para volver a la sección inicio
+    const btnProyecto = document.querySelector('#btn-proyecto');
+    btnProyecto.addEventListener('click', function() {
+        document.querySelector('.tipo-proyecto').style.display = 'none';
+        document.querySelector('.inicio').style.display = 'block';
+    });
+
+
+    // Funcionalidad para el botón btn-volver-proyecto para volver a la sección tipo-proyecto
+    const btnVolverProyecto = document.getElementById('btn-volver-proyecto');
+    btnVolverProyecto.addEventListener('click', function() {
+        // Ocultar todas las secciones para limpieza visual
+        const allSections = document.querySelectorAll('.container > div');
+        allSections.forEach(section => {
+            section.style.display = 'none';
         });
-    }
+        
+        // Mostrar la sección tipo-proyecto
+        document.querySelector('.tipo-proyecto').style.display = 'block';
+    });
 
-    function nextStep() {
-        if (currentStep < steps.length - 1) {
-            currentStep++;
-            showStep(currentStep);
+
+        // Manejar el clic en el botón btn-landing-page para mostrar las preguntas de Landing Page
+        const btnLandingPage = document.getElementById('btn-landing-page');
+        const allSections = document.querySelectorAll('.container > div');
+        const landingSections = document.querySelectorAll('#preguntas-landing > div');
+        let currentLandingIndex = 0; // índice para controlar qué pregunta se muestra
+    
+        btnLandingPage.addEventListener('click', function() {
+            allSections.forEach(section => {
+                section.style.display = 'none'; // Ocultar todas las secciones
+            });
+            document.getElementById('preguntas-landing').style.display = 'block'; // Mostrar el contenedor de preguntas de landing
+            showLandingSection(currentLandingIndex); // Mostrar la primera sección de preguntas
+        });
+    
+        // Función para mostrar una sección de preguntas de landing
+        function showLandingSection(index) {
+            landingSections.forEach((section, idx) => {
+                section.style.display = idx === index ? 'block' : 'none'; // Mostrar solo la sección activa
+            });
         }
-    }
+    
+        // Agregar listeners a los botones de navegación dentro de preguntas-landing
+        document.querySelectorAll('#preguntas-landing .arrow').forEach(button => {
+            button.addEventListener('click', function() {
+                if (this.id === 'btn-siguiente' && currentLandingIndex < landingSections.length - 1) {
+                    currentLandingIndex++; // Incrementar el índice para mostrar la siguiente sección
+                } else if (this.id === 'btn-atras' && currentLandingIndex > 0) {
+                    currentLandingIndex--; // Decrementar el índice para volver a la sección anterior
+                }
+                showLandingSection(currentLandingIndex); // Actualizar la vista
+            });
+    });
+    
 
-    function prevStep() {
-        if (currentStep > 0) {
-            currentStep--;
-            showStep(currentStep);
-        }
-    }
-
-    // Asignar eventos a los botones de navegación
-    const btnNext = document.querySelectorAll(".arrow-container .arrow#btn-next");
-    const btnPrev = document.querySelectorAll(".arrow-container .arrow#btn-prev");
-
-    btnNext.forEach(button => button.addEventListener("click", nextStep));
-    btnPrev.forEach(button => button.addEventListener("click", prevStep));
-
-    // Asignar evento click al botón con id "btn-prev-contacto" para redirigir a la sección "tipo-de-proyecto"
-    const btnPrevContacto = document.getElementById("btn-prev-contacto");
-    if (btnPrevContacto) {
-        btnPrevContacto.addEventListener("click", function() {
-            window.location.href = 'index.html#tipo-de-proyecto';
-        });
-    }
-
-    // Asignar eventos a los botones de selección de proyecto
-    const btnLandingPage = document.getElementById("btn-landing-page");
-    const btnSitioWeb = document.getElementById("btn-sitio-web");
-    const btnTiendaOnline = document.getElementById("btn-tienda-online");
-
-    if (btnLandingPage) {
-        btnLandingPage.addEventListener("click", () => {
-            window.location.href = 'landing.html';
-        });
-    }
-
-    if (btnSitioWeb) {
-        btnSitioWeb.addEventListener("click", () => {
-            window.location.href = 'sitioweb.html';
-        });
-    }
-
-    if (btnTiendaOnline) {
-        btnTiendaOnline.addEventListener("click", () => {
-            window.location.href = 'tiendaonline.html';
-        });
-    }
-
-    // Inicializar la vista del primer paso
-    showStep(currentStep);
-
-    // Asignar evento al botón de inicio si existe
-    const startButton = document.getElementById("btn-inicio");
-    if (startButton) {
-        startButton.addEventListener("click", nextStep);
-    }
 });
-
-// Función para manejar el desplazamiento hasta el ancla después de que la página ha cargado
-window.onload = function() {
-    if (window.location.hash) {
-        const id = window.location.hash.slice(1); // Obtiene el ID de la sección desde el hash de la URL
-        const element = document.getElementById(id);
-        if (element) {
-            setTimeout(() => {
-                element.scrollIntoView(); // Desplaza el navegador hasta el elemento
-            }, 100); // Pequeño retardo para asegurar la carga de la página
-        }
-    }
-};

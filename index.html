@@ -14,42 +14,340 @@
 <body>
     <div class="container">
         <!-- SECCION PRINCIPAL -->
-        <div class="inicio form-step">
+        <div class="inicio">
             <h4>Bienvenidos a nuestro</h4>
             <h1>Universo Creativo</h1>
             <p>Nos alegra que estés aquí y estamos listos para ayudarte a crear la página <br> perfecta para tu negocio. Solo necesitamos que respondas algunas preguntas<br> para ofrecerte una cotización precisa y adaptada a tus necesidades.</p>
             <button id="btn-inicio">¡Comencemos!</button>
         </div>
 
-        <!-- SECCION 2 -->
-        <div class="tipo-proyecto form-step" id="tipo-de-proyecto">
+        <!-- SECCION TIPO DE PROYECTO -->
+        <div class="tipo-proyecto">
             <h4>Definamos tu proyecto ideal</h4>
             <h2>¿Qué tipo de proyecto te interesa?<br> Selecciona una opción:</h2>
             <div class="button-group">
-                <button id="btn-landing-page" onclick="window.location.href='landing.html'">Landing Page</button>
-                <button id="btn-sitio-web" onclick="window.location.href='sitioweb.html'">Sitio Web Informativo</button>
-                <button id="btn-tienda-online" onclick="window.location.href='tiendaonline.html'">Tienda Online</button>
+                <button id="btn-landing-page">Landing Page</button>
+                <button id="btn-sitio-web">Sitio Web Informativo</button>
+                <button id="btn-tienda-online">Tienda Online</button>
             </div>
 
             <div class="arrow-container">
-                <button class="arrow" id="btn-prev">
-                    <!-- SVG para flecha izquierda -->
-                    <svg width="69" height="70" viewBox="0 0 69 70" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <g clip-path="url(#clip0_2_2)">
-                        <path d="M34.522 3.46806C18.6858 3.53165 5.34244 15.7832 3.75403 31.8579C2.77966 41.7114 5.40494 50.3866 12.3174 57.4906C17.5754 62.8962 24.0099 65.8441 31.4849 66.3865C31.7092 66.4015 31.9335 66.4202 32.1578 66.4464C33.4226 66.596 34.1507 67.3442 34.0514 68.3991C33.9521 69.4466 33.1542 70.1461 31.9372 69.9741C29.2935 69.6074 26.569 69.4354 24.0503 68.6273C11.7144 64.6619 3.70623 56.2411 0.897109 43.3948C-3.05184 25.3262 6.38299 8.49585 22.4472 2.24852C40.9786 -4.96396 62.2456 5.83606 67.5292 25.3524C70.8678 37.6862 68.5698 48.9202 60.1497 58.6279C57.1457 62.0919 53.4836 64.6956 49.3471 66.5997C48.2036 67.1235 47.2145 66.8354 46.7623 65.8516C46.3137 64.8714 46.7476 63.9212 47.8837 63.3676C57.2156 58.8186 63.1059 51.4266 64.9039 41.0605C68.1727 22.2063 55.6419 6.70395 39.6402 4.03668C37.9489 3.75611 36.2281 3.65136 34.522 3.46432V3.46806Z" fill="white"/>
-                        <path d="M27.9183 33.1672H28.9957C36.3788 33.1672 43.7656 33.1672 51.1488 33.1709C51.5385 33.1709 51.943 33.1859 52.318 33.2869C53.1343 33.5076 53.6049 34.2408 53.5498 35.1087C53.4983 35.9429 52.8916 36.6163 52.0643 36.7322C51.7591 36.7734 51.4466 36.7547 51.1341 36.7547C43.7509 36.7547 36.3641 36.7547 28.981 36.7547C28.6795 36.7547 28.3816 36.7547 27.9183 36.7547C28.1794 37.0577 28.3228 37.2485 28.4919 37.4168C30.1281 39.0778 31.7717 40.7313 33.4005 42.396C34.283 43.2976 34.3823 44.3862 33.68 45.1418C32.9336 45.9461 31.8526 45.8825 30.926 44.9473C28.1463 42.1379 25.3703 39.3247 22.6016 36.5041C21.5647 35.4454 21.5794 34.5326 22.6347 33.4589C25.385 30.6607 28.139 27.8663 30.8966 25.0756C31.8048 24.1553 32.9262 24.0618 33.6506 24.8287C34.3492 25.5694 34.2389 26.6729 33.3675 27.5707C31.6026 29.3851 29.834 31.192 27.9147 33.1634L27.9183 33.1672Z" fill="white"/>
-                        <path d="M39.074 69.7679C37.9893 69.7679 37.2209 69.1207 37.1069 68.2229C36.9819 67.224 37.5334 66.4085 38.5225 66.214C39.6255 66.0008 40.7359 65.8137 41.85 65.6716C42.9972 65.5257 43.7988 66.0943 43.9863 67.1081C44.1664 68.077 43.5377 68.9598 42.4346 69.1843C41.2801 69.42 40.1109 69.5883 39.074 69.7679Z" fill="white"/>
-                        </g>
-                        <defs>
-                        <clipPath id="clip0_2_2">
-                        <rect width="69" height="70" fill="white"/>
-                        </clipPath>
-                        </defs>
-                    </svg>
+                <button class="arrow" id="btn-proyecto">
+                    <img id="flecha" src="img/IZQUIERDA.svg" alt="">
                 </button>
             </div>
         </div>
+
+        
+         <!-- PREGUNTAS LANDING PAGE -->
+    <div class="section-lading" id="preguntas-landing">
+
+         <div class="objetivo-lp"> 
+            <h4>Objetivo de la Landing Page</h4>
+            <h2>¿Cuál es el objetivo principal de tu landing page?</h2>
+            <div class="button-group">
+                <button>Captura de Leads</button>
+                <button>Promoción de Producto/Servicio</button>
+                <button> Evento</button>
+                <button>Inscripción/Registro</button>
+            </div>
+
+            <div class="arrow-container">
+                <button class="arrow" id="btn-volver-proyecto">
+                    <img id="flecha" src="img/IZQUIERDA.svg" alt="">
+                </button>
+
+                <button class="arrow" id="btn-siguiente">
+                    <img id="flecha" src="img/DERECHA.svg" alt="">
+                </button>
+            </div>
+        </div>
+
+
+        <div class="hosting-lp"> 
+            <h4>Hosting y Dominio</h4>
+            <h2>¿Ya tienes hosting y dominio?</h2>
+            <p>El hosting es el espacio donde se aloja tu sitio web, y el dominio es la dirección web (ejemplo.com) que usará la gente para encontrarte.</p>
+            <div class="button-group">
+                <button>Sí, ya tengo ambos</button>
+                <button>Sí, solo tengo dominio</button>
+                <button>Sí, solo tengo hosting</button>
+                <button>No, necesito ambos</button>
+                <button>No estoy seguro, necesito asesoría</button>
+            </div>
+
+            <div class="arrow-container">
+                <button class="arrow" id="btn-atras">
+                    <img src="img/IZQUIERDA.svg" alt="" id="flecha">
+                </button>
+
+                <button class="arrow" id="btn-siguiente">
+                    <img src="img/DERECHA.svg" alt="" id="flecha">
+                </button>
+            </div>
+        </div>
+
+
+        <div class="diseño-lp"> 
+            <h4>Diseño y Estilo</h4>
+            <h2> ¿Qué nivel de personalización de diseño prefieres?</h2>
+            <div class="button-group">
+                <button>Plantilla Básica</button>
+                <button>Personalización Intermedia</button>
+                <button>Diseño a Medida</button>
+            </div>
+
+            <div class="arrow-container">
+                <button class="arrow" id="btn-atras">
+                    <img src="img/IZQUIERDA.svg" alt="" id="flecha">
+                </button>
+
+                <button class="arrow" id="btn-siguiente">
+                    <img src="img/DERECHA.svg" alt="" id="flecha">
+                </button>
+            </div>
+        </div>
+
+
+        <div class="mantenimiento-lp">
+            <h4>Mantenimiento y Soporte</h4>
+            <h2>¿Necesitas mantenimiento y soporte continuo?</h2>
+            <div class="button-group">
+                <button>Sí, soporte mensual</button>
+                <button>No, solo el desarrollo inicial</button>
+            </div>
+
+            <div class="arrow-container">
+                <button class="arrow" id="btn-atras">
+                    <img src="img/IZQUIERDA.svg" alt="" id="flecha">
+                </button>
+
+                <button class="arrow" id="btn-siguiente">
+                    <img src="img/DERECHA.svg" alt="" id="flecha">
+                </button>
+            </div>
+        </div>
+
+        <div class="presupuesto-lp">
+            <h4>Presupuesto</h4>
+            <h2>Considerando las características y funcionalidades que has seleccionado, ¿cuál es el presupuesto que tienes destinado para tu lading page? Esto nos ayudará a ajustar la propuesta a tus necesidades.</h2>
+            <div class="button-group">
+                <button>Menos de $1,000,000 COP</button>
+                <button>Entre $1,000,000 y $3,000,000 COP</button>
+                <button>Más de $3,000,000 COP</button>
+            </div>
+
+            <form>
+                    <div class="form-group">
+                        <input type="text" id="presupuesto" name="presupuesto" placeholder="Otro (por favor, indica tu presupuesto)">
+                    </div>
+            </form>
+
+            <div class="arrow-container">
+                <button class="arrow" id="btn-atras">
+                    <img src="img/IZQUIERDA.svg" alt="" id="flecha">
+                </button>
+
+                <button class="arrow" id="btn-siguiente">
+                    <img src="img/DERECHA.svg" alt="" id="flecha">
+                </button>
+            </div>
+        </div>
+
+
+        <div class="form-step">
+            <h4>Datos de Contacto</h4>
+            <h2>¡Estamos casi listos! Para enviarte una <br> cotización personalizada, déjanos tus<br> datos de contacto:</h2>
+            <form>
+                <div class="form-row">
+                    <div class="form-group">
+                        <input type="text" id="nombre" name="nombre" placeholder="Nombre">
+                    </div>
+                    <div class="form-group">
+                        <input type="email" id="correo" name="correo" placeholder="Correo electrónico">
+                    </div>
+                </div>
+                <div class="form-row">
+                    <div class="form-group">
+                        <input type="tel" id="celular" name="celular" placeholder="Número de celular">
+                    </div>
+                    <div class="form-group">
+                        <input type="text" id="pais" name="pais" placeholder="País">
+                    </div>
+                </div>
+            </form>
+            <div class="arrow-container">
+                <button class="arrow" id="btn-atras">
+                    <img src="img/IZQUIERDA.svg" alt="" id="flecha">
+                </button>
+
+                <button class="arrow" id="btn-siguiente">
+                    <img src="img/DERECHA.svg" alt="" id="flecha">
+                </button>
+            </div>
+        </div>
+
+    </div>
+
+
+
+
+
+     <!-- PREGUNTAS SITIO WEB INFORMATIVO -->
+     <div class="section-web" id="section-sw">
+
+        <div class="objetivo-sw"> 
+           <h4>Objetivo del sitio web</h4>
+           <h2>¿Qué tipo de sitio web informativo necesitas?</h2>
+           <div class="button-group">
+               <button>Empresa</button>
+               <button>Personal/Portafolio</button>
+               <button>Blog</button>
+               <button>Organización sin ánimo de lucro</button>
+           </div>
+
+           <div class="arrow-container">
+               <button class="arrow" id="btn-atras">
+                   <object id="flecha" data="img/IZQUIERDA.svg" type=""></object>
+               </button>
+
+               <button class="arrow" id="btn-siguiente">
+                   <object id="flecha" data="img/DERECHA.svg" type=""></object>
+               </button>
+           </div>
+       </div>
+
+
+       <div class="hosting-sw"> 
+           <h4>Hosting y Dominio</h4>
+           <h2>¿Ya tienes hosting y dominio?</h2>
+           <p>El hosting es el espacio donde se aloja tu sitio web, y el dominio es la dirección web (ejemplo.com) que usará la gente para encontrarte.</p>
+           <div class="button-group">
+               <button>Sí, ya tengo ambos</button>
+               <button>Sí, solo tengo dominio</button>
+               <button>Sí, solo tengo hosting</button>
+               <button>No, necesito ambos</button>
+               <button>No estoy seguro, necesito asesoría</button>
+           </div>
+
+           <div class="arrow-container">
+               <button class="arrow" id="btn-atras">
+                   <object id="flecha" data="img/IZQUIERDA.svg" type=""></object>
+               </button>
+
+               <button class="arrow" id="btn-siguiente">
+                   <object id="flecha" data="img/DERECHA.svg" type=""></object>
+               </button>
+           </div>
+       </div>
+
+
+       <div class="diseño-sw"> 
+           <h4>Diseño y Estilo</h4>
+           <h2> ¿Qué nivel de personalización de diseño prefieres?</h2>
+           <div class="button-group">
+               <button>Plantilla Básica</button>
+               <button>Personalización Intermedia</button>
+               <button>Diseño a Medida</button>
+           </div>
+
+           <div class="arrow-container">
+               <button class="arrow" id="btn-atras">
+                   <object id="flecha" data="img/IZQUIERDA.svg" type=""></object>
+               </button>
+
+               <button class="arrow" id="btn-siguiente">
+                   <object id="flecha" data="img/DERECHA.svg" type=""></object>
+               </button>
+           </div>
+       </div>
+
+
+       <div class="mantenimiento-sw">
+           <h4>Mantenimiento y Soporte</h4>
+           <h2>¿Necesitas mantenimiento y soporte continuo?</h2>
+           <div class="button-group">
+               <button>Sí, soporte mensual</button>
+               <button>No, solo el desarrollo inicial</button>
+           </div>
+
+           <div class="arrow-container">
+               <button class="arrow" id="btn-atras">
+                   <object id="flecha" data="img/IZQUIERDA.svg" type=""></object>
+               </button>
+
+               <button class="arrow" id="btn-siguiente">
+                   <object id="flecha" data="img/DERECHA.svg" type=""></object>
+               </button>
+           </div>
+       </div>
+
+       <div class="presupuesto-sw">
+           <h4>Presupuesto</h4>
+           <h2>Considerando las características y funcionalidades que has seleccionado, ¿cuál es el presupuesto que tienes destinado para tu lading page? Esto nos ayudará a ajustar la propuesta a tus necesidades.</h2>
+           <div class="button-group">
+               <button>Menos de $1,000,000 COP</button>
+               <button>Entre $1,000,000 y $3,000,000 COP</button>
+               <button>Más de $3,000,000 COP</button>
+           </div>
+
+           <form>
+                   <div class="form-group">
+                       <input type="text" id="presupuesto" name="presupuesto" placeholder="Otro (por favor, indica tu presupuesto)">
+                   </div>
+           </form>
+
+           <div class="arrow-container">
+               <button class="arrow" id="btn-atras">
+                   <object id="flecha" data="img/IZQUIERDA.svg" type=""></object>
+               </button>
+
+               <button class="arrow" id="btn-siguiente">
+                   <object id="flecha" data="img/DERECHA.svg" type=""></object>
+               </button>
+           </div>
+       </div>
+
+
+       <div class="form-step">
+           <h4>Datos de Contacto</h4>
+           <h2>¡Estamos casi listos! Para enviarte una <br> cotización personalizada, déjanos tus<br> datos de contacto:</h2>
+           <form>
+               <div class="form-row">
+                   <div class="form-group">
+                       <input type="text" id="nombre" name="nombre" placeholder="Nombre">
+                   </div>
+                   <div class="form-group">
+                       <input type="email" id="correo" name="correo" placeholder="Correo electrónico">
+                   </div>
+               </div>
+               <div class="form-row">
+                   <div class="form-group">
+                       <input type="tel" id="celular" name="celular" placeholder="Número de celular">
+                   </div>
+                   <div class="form-group">
+                       <input type="text" id="pais" name="pais" placeholder="País">
+                   </div>
+               </div>
+           </form>
+           <div class="arrow-container">
+               <button class="arrow" id="btn-atras">
+                   <object id="flecha" data="img/IZQUIERDA.svg" type=""></object>
+               </button>
+
+               <button class="arrow" id="btn-siguiente">
+                   <object id="flecha" data="img/DERECHA.svg" type=""></object>
+               </button>
+           </div>
+       </div>
+
+   </div>
+
+
+
+
     </div>
     <script src="script.js"></script>
+        
 </body>
 </html>
