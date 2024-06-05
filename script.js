@@ -34,6 +34,22 @@ document.addEventListener("DOMContentLoaded", function() {
     });
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
         // Manejar el clic en el botón btn-landing-page para mostrar las preguntas de Landing Page
         const btnLandingPage = document.getElementById('btn-landing-page');
         const allSections = document.querySelectorAll('.container > div');
@@ -67,6 +83,25 @@ document.addEventListener("DOMContentLoaded", function() {
             });
     });
     
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
         // Funcionalidad para el botón btn-volver-sw para volver a la sección tipo-proyecto
@@ -116,6 +151,62 @@ document.addEventListener("DOMContentLoaded", function() {
             });
         });
     
+
+
+
+
+
+
+
+
+
+
+
+        // Funcionalidad para el botón btn-tienda-online para ir a la sección preguntas-tiendaonline
+    const btnTiendaOnline = document.getElementById('btn-tienda-online');
+    btnTiendaOnline.addEventListener('click', function() {
+        document.querySelectorAll('.container > div').forEach(section => {
+            section.style.display = 'none'; // Ocultar todas las secciones
+        });
+        document.getElementById('preguntas-tiendaonline').style.display = 'block'; // Mostrar la sección preguntas-tiendaonline
+        showTiendaSection(currentTiendaIndex); // Mostrar la primera pregunta
+    });
+
+    // Funcionalidad para el botón btn-volver-tienda para volver a la sección tipo-proyecto
+    const btnVolverTienda = document.getElementById('btn-volver-tienda');
+    btnVolverTienda.addEventListener('click', function() {
+        document.querySelectorAll('.container > div').forEach(section => {
+            section.style.display = 'none'; // Ocultar todas las secciones
+        });
+        document.querySelector('.tipo-proyecto').style.display = 'block'; // Mostrar la sección tipo-proyecto
+    });
+
+    // Navegar entre secciones de preguntas dentro de preguntas-tiendaonline
+    const tiendaSections = document.querySelectorAll('#preguntas-tiendaonline > div');
+    let currentTiendaIndex = 0; // Índice para controlar qué pregunta se muestra
+
+    function showTiendaSection(index) {
+        tiendaSections.forEach((section, idx) => {
+            section.style.display = idx === index ? 'block' : 'none'; // Mostrar solo la sección activa
+        });
+    }
+
+    document.querySelectorAll('#preguntas-tiendaonline .arrow').forEach(button => {
+        button.addEventListener('click', function() {
+            if (this.id === 'btn-siguiente-tienda' && currentTiendaIndex < tiendaSections.length - 1) {
+                currentTiendaIndex++; // Incrementar el índice para mostrar la siguiente sección
+            } else if (this.id === 'btn-atras-tienda' && currentTiendaIndex > 0) {
+                currentTiendaIndex--; // Decrementar el índice para volver a la sección anterior
+            }
+            showTiendaSection(currentTiendaIndex); // Actualizar la vista
+        });
+    });
+
+
+
+
+
+
 
 
 
