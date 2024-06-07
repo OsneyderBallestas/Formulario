@@ -19,7 +19,6 @@ document.addEventListener("DOMContentLoaded", function() {
         document.querySelector('.inicio').style.display = 'block';
     });
 
-
     // Funcionalidad para el botón btn-volver-proyecto para volver a la sección tipo-proyecto
     const btnVolverProyecto = document.getElementById('btn-volver-proyecto');
     btnVolverProyecto.addEventListener('click', function() {
@@ -28,83 +27,116 @@ document.addEventListener("DOMContentLoaded", function() {
         allSections.forEach(section => {
             section.style.display = 'none';
         });
-        
+
         // Mostrar la sección tipo-proyecto
         document.querySelector('.tipo-proyecto').style.display = 'block';
     });
 
+    // === Funcionalidad para Landing Page ===
+    const btnLandingPage = document.getElementById('btn-landing-page');
+    const landingSections = document.querySelectorAll('#preguntas-landing > div');
+    let currentLandingIndex = 0;
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-        // Manejar el clic en el botón btn-landing-page para mostrar las preguntas de Landing Page
-        const btnLandingPage = document.getElementById('btn-landing-page');
-        const allSections = document.querySelectorAll('.container > div');
-        const landingSections = document.querySelectorAll('#preguntas-landing > div');
-        let currentLandingIndex = 0; // índice para controlar qué pregunta se muestra
-    
-        btnLandingPage.addEventListener('click', function() {
-            allSections.forEach(section => {
-                section.style.display = 'none'; // Ocultar todas las secciones
-            });
-            document.getElementById('preguntas-landing').style.display = 'block'; // Mostrar el contenedor de preguntas de landing
-            showLandingSection(currentLandingIndex); // Mostrar la primera sección de preguntas
-        });
-    
-        // Función para mostrar una sección de preguntas de landing
-        function showLandingSection(index) {
-            landingSections.forEach((section, idx) => {
-                section.style.display = idx === index ? 'block' : 'none'; // Mostrar solo la sección activa
-            });
-        }
-    
-        // Agregar listeners a los botones de navegación dentro de preguntas-landing
-        document.querySelectorAll('#preguntas-landing .arrow').forEach(button => {
-            button.addEventListener('click', function() {
-                if (this.id === 'btn-siguiente' && currentLandingIndex < landingSections.length - 1) {
-                    currentLandingIndex++; // Incrementar el índice para mostrar la siguiente sección
-                } else if (this.id === 'btn-atras' && currentLandingIndex > 0) {
-                    currentLandingIndex--; // Decrementar el índice para volver a la sección anterior
-                }
-                showLandingSection(currentLandingIndex); // Actualizar la vista
-            });
+    btnLandingPage.addEventListener('click', function() {
+        secciones.forEach(section => section.style.display = 'none');
+        document.getElementById('preguntas-landing').style.display = 'block';
+        showLandingSection(currentLandingIndex);
     });
-    
 
+    function showLandingSection(index) {
+        landingSections.forEach((section, idx) => {
+            section.style.display = idx === index ? 'block' : 'none';
+        });
+        updateLandingNextButton();
+    }
 
+    document.querySelectorAll('#preguntas-landing .arrow').forEach(button => {
+        button.addEventListener('click', function() {
+            if (this.id === 'btn-siguiente' && currentLandingIndex < landingSections.length - 1) {
+                currentLandingIndex++;
+            } else if (this.id === 'btn-atras' && currentLandingIndex > 0) {
+                currentLandingIndex--;
+            }
+            showLandingSection(currentLandingIndex);
+        });
+    });
 
+    function updateLandingNextButton() {
+        const currentSection = landingSections[currentLandingIndex];
+        const buttons = currentSection.querySelectorAll('.button-group button');
+        const nextButton = currentSection.querySelector('#btn-siguiente');
+        const anySelected = [...buttons].some(button => button.classList.contains('seleccionado'));
+        if (nextButton) {
+            nextButton.disabled = !anySelected;
+        }
+    }
 
+    const objetivoLandingButtons = document.querySelectorAll('.objetivo-landing');
+    objetivoLandingButtons.forEach(button => {
+        button.addEventListener('click', function() {
+            if (this.classList.contains('seleccionado')) {
+                this.classList.remove('seleccionado');
+            } else {
+                objetivoLandingButtons.forEach(btn => btn.classList.remove('seleccionado'));
+                this.classList.add('seleccionado');
+            }
+            updateLandingNextButton();
+        });
+    });
 
+    // === Funcionalidad para Sitio Web Informativo ===
+    const btnSitioWeb = document.getElementById('btn-sitio-web');
+    const sitioWebSections = document.querySelectorAll('#preguntas-sitioweb > div');
+    let currentSitioWebIndex = 0;
 
+    btnSitioWeb.addEventListener('click', function() {
+        secciones.forEach(section => section.style.display = 'none');
+        document.getElementById('preguntas-sitioweb').style.display = 'block';
+        showSitioWebSection(currentSitioWebIndex);
+    });
 
+    function showSitioWebSection(index) {
+        sitioWebSections.forEach((section, idx) => {
+            section.style.display = idx === index ? 'block' : 'none';
+        });
+        updateSitioWebNextButton();
+    }
 
+    document.querySelectorAll('#preguntas-sitioweb .arrow').forEach(button => {
+        button.addEventListener('click', function() {
+            if (this.id === 'btn-siguientesw' && currentSitioWebIndex < sitioWebSections.length - 1) {
+                currentSitioWebIndex++;
+            } else if (this.id === 'btn-atrasw' && currentSitioWebIndex > 0) {
+                currentSitioWebIndex--;
+            }
+            showSitioWebSection(currentSitioWebIndex);
+        });
+    });
 
+    function updateSitioWebNextButton() {
+        const currentSection = sitioWebSections[currentSitioWebIndex];
+        const buttons = currentSection.querySelectorAll('.button-group button');
+        const nextButton = currentSection.querySelector('#btn-siguientesw');
+        const anySelected = [...buttons].some(button => button.classList.contains('seleccionado'));
+        if (nextButton) {
+            nextButton.disabled = !anySelected;
+        }
+    }
 
+    const objetivoSitioWebButtons = document.querySelectorAll('.objetivo-sitioweb');
+    objetivoSitioWebButtons.forEach(button => {
+        button.addEventListener('click', function() {
+            if (this.classList.contains('seleccionado')) {
+                this.classList.remove('seleccionado');
+            } else {
+                objetivoSitioWebButtons.forEach(btn => btn.classList.remove('seleccionado'));
+                this.classList.add('seleccionado');
+            }
+            updateSitioWebNextButton();
+        });
+    });
 
-
-
-
-
-
-
-
-
-
-
-        // Funcionalidad para el botón btn-volver-sw para volver a la sección tipo-proyecto
+    // Funcionalidad para el botón btn-volver-sw para volver a la sección tipo-proyecto
     const btnVolverSW = document.getElementById('btn-volver-sw');
     btnVolverSW.addEventListener('click', function() {
         // Ocultar todas las secciones para limpieza visual
@@ -112,102 +144,78 @@ document.addEventListener("DOMContentLoaded", function() {
         allSections.forEach(section => {
             section.style.display = 'none';
         });
-        
+
         // Mostrar la sección tipo-proyecto
         document.querySelector('.tipo-proyecto').style.display = 'block';
     });
 
-    
-        // Manejar el clic en el botón btn-sitio-web para mostrar las preguntas de Sitio Web Informativo
-        const btnSitioWeb = document.getElementById('btn-sitio-web');
-        const sitioWebSections = document.querySelectorAll('#preguntas-sitioweb > div');
-        let currentSitioWebIndex = 0; // índice para controlar qué pregunta se muestra
-        
-        btnSitioWeb.addEventListener('click', function() {
-            const allSections = document.querySelectorAll('.container > div');
-            allSections.forEach(section => {
-                section.style.display = 'none'; // Ocultar todas las secciones
-            });
-            document.getElementById('preguntas-sitioweb').style.display = 'block'; // Mostrar el contenedor de preguntas de sitio web
-            showSitioWebSection(currentSitioWebIndex); // Mostrar la primera sección de preguntas
-        });
-    
-        // Función para mostrar una sección de preguntas de sitio web
-        function showSitioWebSection(index) {
-            sitioWebSections.forEach((section, idx) => {
-                section.style.display = idx === index ? 'block' : 'none'; // Mostrar solo la sección activa
-            });
-        }
-    
-        // Agregar listeners a los botones de navegación dentro de preguntas-sitioweb
-        document.querySelectorAll('#preguntas-sitioweb .arrow').forEach(button => {
-            button.addEventListener('click', function() {
-                if (this.id.includes('siguientesw') && currentSitioWebIndex < sitioWebSections.length - 1) {
-                    currentSitioWebIndex++; // Incrementar el índice para mostrar la siguiente sección
-                } else if (this.id.includes('atrasw') && currentSitioWebIndex > 0) {
-                    currentSitioWebIndex--; // Decrementar el índice para volver a la sección anterior
-                }
-                showSitioWebSection(currentSitioWebIndex); // Actualizar la vista
-            });
-        });
-    
-
-
-
-
-
-
-
-
-
-
-
-        // Funcionalidad para el botón btn-tienda-online para ir a la sección preguntas-tiendaonline
+    // === Funcionalidad para Tienda Online ===
     const btnTiendaOnline = document.getElementById('btn-tienda-online');
-    btnTiendaOnline.addEventListener('click', function() {
-        document.querySelectorAll('.container > div').forEach(section => {
-            section.style.display = 'none'; // Ocultar todas las secciones
-        });
-        document.getElementById('preguntas-tiendaonline').style.display = 'block'; // Mostrar la sección preguntas-tiendaonline
-        showTiendaSection(currentTiendaIndex); // Mostrar la primera pregunta
-    });
-
-    // Funcionalidad para el botón btn-volver-tienda para volver a la sección tipo-proyecto
-    const btnVolverTienda = document.getElementById('btn-volver-tienda');
-    btnVolverTienda.addEventListener('click', function() {
-        document.querySelectorAll('.container > div').forEach(section => {
-            section.style.display = 'none'; // Ocultar todas las secciones
-        });
-        document.querySelector('.tipo-proyecto').style.display = 'block'; // Mostrar la sección tipo-proyecto
-    });
-
-    // Navegar entre secciones de preguntas dentro de preguntas-tiendaonline
     const tiendaSections = document.querySelectorAll('#preguntas-tiendaonline > div');
-    let currentTiendaIndex = 0; // Índice para controlar qué pregunta se muestra
+    let currentTiendaIndex = 0;
+
+    btnTiendaOnline.addEventListener('click', function() {
+        secciones.forEach(section => section.style.display = 'none');
+        document.getElementById('preguntas-tiendaonline').style.display = 'block';
+        showTiendaSection(currentTiendaIndex);
+    });
 
     function showTiendaSection(index) {
         tiendaSections.forEach((section, idx) => {
-            section.style.display = idx === index ? 'block' : 'none'; // Mostrar solo la sección activa
+            section.style.display = idx === index ? 'block' : 'none';
         });
+        updateTiendaNextButton();
     }
 
     document.querySelectorAll('#preguntas-tiendaonline .arrow').forEach(button => {
         button.addEventListener('click', function() {
             if (this.id === 'btn-siguiente-tienda' && currentTiendaIndex < tiendaSections.length - 1) {
-                currentTiendaIndex++; // Incrementar el índice para mostrar la siguiente sección
+                currentTiendaIndex++;
             } else if (this.id === 'btn-atras-tienda' && currentTiendaIndex > 0) {
-                currentTiendaIndex--; // Decrementar el índice para volver a la sección anterior
+                currentTiendaIndex--;
             }
-            showTiendaSection(currentTiendaIndex); // Actualizar la vista
+            showTiendaSection(currentTiendaIndex);
         });
     });
 
+    function updateTiendaNextButton() {
+        const currentSection = tiendaSections[currentTiendaIndex];
+        const buttons = currentSection.querySelectorAll('.button-group button');
+        const nextButton = currentSection.querySelector('#btn-siguiente-tienda');
+        const anySelected = [...buttons].some(button => button.classList.contains('seleccionado'));
+        if (nextButton) {
+            nextButton.disabled = !anySelected;
+        }
+    }
 
+    const objetivoTiendaButtons = document.querySelectorAll('.objetivo-tienda');
+    objetivoTiendaButtons.forEach(button => {
+        button.addEventListener('click', function() {
+            if (this.classList.contains('seleccionado')) {
+                this.classList.remove('seleccionado');
+            } else {
+                objetivoTiendaButtons.forEach(btn => btn.classList.remove('seleccionado'));
+                this.classList.add('seleccionado');
+            }
+            updateTiendaNextButton();
+        });
+    });
 
+    // Funcionalidad para el botón btn-volver-tienda para volver a la sección tipo-proyecto
+    const btnVolverTienda = document.getElementById('btn-volver-tienda');
+    btnVolverTienda.addEventListener('click', function() {
+        // Ocultar todas las secciones para limpieza visual
+        const allSections = document.querySelectorAll('.container > div');
+        allSections.forEach(section => {
+            section.style.display = 'none';
+        });
 
+        // Mostrar la sección tipo-proyecto
+        document.querySelector('.tipo-proyecto').style.display = 'block';
+    });
 
-
-
-
-
+    // Inicializar la validación de botones "Siguiente" en todas las secciones
+    updateLandingNextButton();
+    updateSitioWebNextButton();
+    updateTiendaNextButton();
 });

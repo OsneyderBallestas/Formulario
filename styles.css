@@ -296,4 +296,23 @@ input {
 input::placeholder {
     color: rgba(255, 255, 255, 0.6);
 }
+
+.objetivo-landing.seleccionado {
+    background: #ff004c;
+    color: white;
+}
+
+.objetivo-sitioweb.seleccionado {
+    background: #ff004c;
+    color: white;
+}
+
+
+.objetivo-tienda.seleccionado {
+    background: #ff004c;
+    color: white;
+}
+
+
+
 /* FIN FORMULARIO LANDING */
