@@ -201,6 +201,34 @@ document.addEventListener("DOMContentLoaded", function() {
         });
     });
 
+
+
+
+
+
+
+// Selecciona el input y el botón siguiente
+const tipoTiendaInput = document.getElementById('tipo-tienda');
+const btnSiguienteTienda = document.getElementById('btn-siguiente-tienda');
+
+// Agrega un evento de entrada para detectar cuando se escribe algo
+tipoTiendaInput.addEventListener('input', function() {
+    // Habilita el botón de siguiente si el campo no está vacío
+    if (tipoTiendaInput.value.trim() !== '') {
+        btnSiguienteTienda.disabled = false;
+    } else {
+        btnSiguienteTienda.disabled = true;
+    }
+});
+
+
+
+
+
+
+
+
+
     // Funcionalidad para el botón btn-volver-tienda para volver a la sección tipo-proyecto
     const btnVolverTienda = document.getElementById('btn-volver-tienda');
     btnVolverTienda.addEventListener('click', function() {
