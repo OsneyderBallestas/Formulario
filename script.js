@@ -1,4 +1,10 @@
 document.addEventListener("DOMContentLoaded", function() {
+    
+
+    // Ocultar la página
+    document.body.style.visibility = 'hidden';
+    document.body.style.opacity = '0';
+    
     // Ocultar todas las secciones excepto la de inicio
     const secciones = document.querySelectorAll('.container > div:not(.inicio)');
     secciones.forEach(sec => {
@@ -246,4 +252,13 @@ tipoTiendaInput.addEventListener('input', function() {
     updateLandingNextButton();
     updateSitioWebNextButton();
     updateTiendaNextButton();
+});
+
+
+
+window.addEventListener("load", function() {
+    // Mostrar la página
+    document.body.style.visibility = 'visible';
+    document.body.style.opacity = '1';
+    document.body.style.transition = 'visibility 0s, opacity 0.5s linear';
 });
