@@ -1,6 +1,5 @@
 document.addEventListener("DOMContentLoaded", function() {
     
-
     // Ocultar la página
     document.body.style.visibility = 'hidden';
     document.body.style.opacity = '0';

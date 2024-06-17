@@ -319,3 +319,98 @@ input::placeholder {
 
 
 /* FIN FORMULARIO LANDING */
+
+
+
+
+/* ALERTA */
+
+.alerta {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px 20px;
+    border-radius: 5px;
+    margin: 20px auto;
+    width: 80%; /* Ancho de la alerta */
+    position: relative;
+    border: 1px solid rgba(241, 6, 6, 0.81); /* Borde de la alerta */
+    background-color: rgba(220, 17, 1, 0.16); /* Fondo de la alerta */
+    box-shadow: 0px 0px 2px #ff0303; /* Sombra para darle profundidad */
+    color: #ff0303; /* Color del texto */
+    text-shadow: 2px 1px #00040a;
+    transition: 0.5s;
+    cursor: pointer;
+
+    display: none; /* Oculta la alerta inicialmente */
+}
+
+.alerta:hover {
+    background-color: rgba(220, 17, 1, 0.33);
+    transition: 0.5s;
+}
+
+.alerta::before {
+    content: "";
+    position: absolute;
+    top: 50%; /* Centra la línea verticalmente */
+    left: 0px; /* Posición de la línea a la izquierda */
+    transform: translateY(-50%); /* Ajusta la línea para que esté centrada */
+    width: 3px; /* Ancho de la línea */
+    height: 25px; /* Altura de la línea */
+    background-color: #ff0303; /* Color de la línea */
+    border-top-right-radius: 5px;
+    border-bottom-right-radius: 5px;
+    border-right: 1px solid #ff0303; /* Borde derecho para separarla del contenido */
+}
+
+.cerrar {
+    color: #ff0303; /* Color del icono */
+    -webkit-animation: parpadear 2s infinite both;
+    animation: parpadear 2s infinite both;
+}
+
+.mensaje {
+    flex: 1;
+    margin-left: 10px;
+    color: #ff0303; /* Color del mensaje */
+}
+
+.cerrar {
+    cursor: pointer;
+    background: none; /* Sin fondo */
+    border: none; /* Sin borde */
+    font-size: 20px;
+    color: #ff0303; /* Color del icono */
+    -webkit-animation: parpadear 2s infinite both;
+    animation: parpadear 2s infinite both;
+    padding: 0; /* Sin padding */
+}
+
+.cerrar:hover {
+    color: #ff2e2e; /* Color al pasar el mouse */
+}
+
+.cerrar:focus {
+    outline: none; /* Sin borde al recibir foco */
+}
+
+@-webkit-keyframes parpadear {
+    0%, 50%, 100% {
+        opacity: 1;
+    }
+    25%, 75% {
+        opacity: 0;
+    }
+}
+
+@keyframes parpadear {
+    0%, 50%, 100% {
+        opacity: 1;
+    }
+    25%, 75% {
+        opacity: 0;
+    }
+}
+
+/* FIN ALERTA */
