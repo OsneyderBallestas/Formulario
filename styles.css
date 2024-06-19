@@ -29,7 +29,7 @@ body {
     height: 100vh;
     visibility: hidden;
     opacity: 0;
-    transition: visibility 0s, opacity 0.5s linear;
+    transition: visibility 0s linear, opacity 1s ease-in-out; /* Aumenta la duración a 1 segundo */
 }
 
 .container {
@@ -40,6 +40,15 @@ body {
     align-items: center;
     justify-content: center;
 }
+
+.container > div {
+    display: none; /* Oculta todas las secciones por defecto */
+}
+
+.container > .inicio {
+    display: block; /* Asegúrate de que la sección de inicio esté visible */
+}
+
 
 
 h4 {
@@ -300,7 +309,13 @@ input::placeholder {
     color: rgba(255, 255, 255, 0.6);
 }
 
-.objetivo-landing.seleccionado {
+
+/* FIN FORMULARIO LANDING */
+
+
+/* BOTONES DEL FORMULARIO OBJETIVOS LANDING PAGE*/
+
+.objetivo-landing-01.seleccionado {
     background: #ff004c;
     color: white;
 }
@@ -317,8 +332,12 @@ input::placeholder {
 }
 
 
+/* FIN BOTONES DEL FORMULARIO OBJETIVOS LANDING PAGE  */
 
-/* FIN FORMULARIO LANDING */
+
+#preguntas-landing > div {
+    display: none;
+}
 
 
 
